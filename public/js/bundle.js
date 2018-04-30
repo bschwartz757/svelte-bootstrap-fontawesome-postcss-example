@@ -19584,7 +19584,7 @@ var app = (function () {
 			},
 
 			h: function hydrate() {
-				div_1.className = "card col-6 weather-app-card svelte-1k2qbei";
+				div_1.className = "card col-6 weather-app-card svelte-rced77";
 				section.className = "col-12 d-flex justify-content-center";
 				main.className = "container";
 				div.className = "d-flex justify-content-center align-items-center";
