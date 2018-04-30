@@ -1,4 +1,11 @@
 import App from "./App.html";
+// import "./utils/jquery-global";
+import $ from "jquery";
+window.$ = $;
+import Popper from "popper.js";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap";
+// import "fontawesome";
 
 // const apiKey = fetch("/get-key")
 //   .then(res => res.json())
