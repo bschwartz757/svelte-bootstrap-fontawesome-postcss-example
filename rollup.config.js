@@ -2,6 +2,7 @@ import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import buble from "rollup-plugin-buble";
+import alias from "rollup-plugin-alias";
 import uglify from "rollup-plugin-uglify";
 import sass from "node-sass";
 
@@ -16,6 +17,10 @@ export default {
     file: "public/js/bundle.js"
   },
   plugins: [
+    alias({
+      "@fortawesome/fontawesome-free-solid":
+        "node_modules/@fortawesome/fontawesome-free-solid/shakable.es.js"
+    }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,

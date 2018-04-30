@@ -18,6 +18,12 @@
 <hr>
 
 <script>
+
+  import fontawesome from "@fortawesome/fontawesome";
+  import { faSearch, faTimes } from "@fortawesome/fontawesome-free-solid";
+
+  fontawesome.library.add(faSearch, faTimes);
+
   export default {
     methods: {
       handleChange(evt) {

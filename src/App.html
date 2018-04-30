@@ -1,18 +1,28 @@
-<main class="container">
-  <div class="d-flex justify-content-center align-items-center">
-    <section class="col-12 d-flex justify-content-center weather-app">
+<div class="d-flex justify-content-center align-items-center">
+  <main class="container">
+    <section class="col-12 d-flex justify-content-center">
       <div class="card col-6 weather-app-card">
         <CardHeader on:state="getWeather(event)" />
         <CardBody current={weather}/>
         <CardFooter forecast={weather}/>
       </div>
     </section>
-  </div>
-</main>
+  </main>
+</div>
+
+<!-- <style>
+  .weather-app-card {
+    color: white;
+    background-color: rgba(74, 144, 226,
+    0.75);
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.5);
+    padding: 0 0;
+  }
+</style> -->
 
 <style type='text/scss'>
-  @import "node_modules/bootstrap/scss/bootstrap.scss"; .weather-app-card { color: white; background-color: rgba(74, 144, 226,
-  0.75); box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.5); padding: 0 0; }
+  @import 'styles'; .weather-app-card { color: white; background-color: rgba(74, 144, 226, 0.75); box-shadow: 0 0 .75rem rgba(0,
+  0, 0, 0.5); padding: 0 0; }
 </style>
 
 <script>

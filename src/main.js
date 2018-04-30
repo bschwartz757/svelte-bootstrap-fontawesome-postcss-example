@@ -1,12 +1,11 @@
-import App from "./App.html";
-// import "./utils/jquery-global";
 import $ from "jquery";
 window.$ = $;
-import Popper from "popper.js";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap";
-// import "fontawesome";
 
+import Popper from "popper.js";
+
+import "bootstrap";
+
+// import "./app.scss";
 // const apiKey = fetch("/get-key")
 //   .then(res => res.json())
 //   .then(result => {
@@ -16,8 +15,10 @@ import Popper from "popper.js";
 //     console.error(`Error fetching key: ${err}`);
 //   });
 
+import App from "./App.html";
+
 const app = new App({
-  target: document.querySelector(".weather-app")
+  target: document.querySelector("#weather-app")
 });
 
 export default app;
