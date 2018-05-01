@@ -5,9 +5,8 @@ import Popper from "popper.js";
 
 import "bootstrap";
 
+import "./app.scss";
 // import "bootstrap/dist/css/bootstrap.min.css";
-// import "./styles.scss";
-
 // const apiKey = fetch("/get-key")
 //   .then(res => res.json())
 //   .then(result => {
