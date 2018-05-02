@@ -28,7 +28,9 @@ export default {
       dev: !production
     }),
     postcss({
-      extensions: [".css", ".scss"]
+      extensions: [".css", ".scss"],
+      // `extract: false` will automatically inject all styles into <head> tag
+      extract: "./public/css/bundle.css"
     }),
     resolve(),
     commonjs(),

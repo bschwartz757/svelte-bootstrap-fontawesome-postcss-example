@@ -1,20 +1,10 @@
-import $ from "jquery";
-window.$ = $;
+// Un-comment if you want to use Bootstrap js
+// import "./utils/bootstrap-libs";
 
-import Popper from "popper.js";
-
-import "bootstrap";
+// Fetch api key for openweathermap.com at app start time - only use this if running Express app with a valid api key in `key.txt`
+// import fetchKey from './utils/fetchKey';
 
 import "./app.scss";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// const apiKey = fetch("/get-key")
-//   .then(res => res.json())
-//   .then(result => {
-//     window.apiKey = result.key;
-//   })
-//   .catch(err => {
-//     console.error(`Error fetching key: ${err}`);
-//   });
 
 import App from "./App.html";
 

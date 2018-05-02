@@ -22,6 +22,7 @@
   import getWeatherByCity from './utils/getWeatherByCity';
 
   export default {
+    transitions: { fade },
     data() {
       return {
         weather: [],
@@ -37,6 +38,7 @@
       getWeather: async function (value) {
         const initialState = this.get();
         if (!value.current.city) {
+          // this resets the cardBody and cardFooter components
           return this.set({
             weather: [],
             apiKey: initialState.apiKey
@@ -44,14 +46,13 @@
         }
         let results
         try {
-          results = await getWeatherByCity(value.current)
+          results = await getWeatherByCity(value.current);
         } catch (err) {
           results = ['City not found'];
         }
         return this.set({
           weather: results
         });
-
       }
     }
   };

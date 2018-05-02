@@ -5,10 +5,13 @@
   <meta charset='utf8'>
   <meta name='viewport' content='width=device-width'>
 
-  <title>Svelte app</title>
-  <!-- bundled assets injected during build -->
+  <title>Fooquux Spazzbot</title>
   <link rel='stylesheet' href='css/global.css'>
+  <!-- can inject bundled assets during build, or split out - see `rollup.config.js` -->
+  <link rel='stylesheet' href='css/bundle.css'>
 </head>
+
+<!-- Can use Bootstrap classes outside of component code; bootstrap is injected to <head> element by rollup-plugin-postcss -->
 
 <body id="weather-app" class="d-flex justify-content-center align-items-center">
   <!-- content injected here -->
