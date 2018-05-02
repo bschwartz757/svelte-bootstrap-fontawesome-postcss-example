@@ -1,5 +1,5 @@
 {#if !forecast.length}
-<div class="card-footer d-flex justify-content-center weather-app-card__footer">
+<div class="card-footer d-flex justify-content-center weather-app-card__footer" transition:fade>
   <div class="col-6 text-center">
     <h1>No Forecast Data</h1>
   </div>
@@ -9,10 +9,11 @@
     color: #888;
     background: white;
     padding: 1rem 0;
+    border-radius: 0 0 4px 4px;
   }
 </style>
 {:elseif forecast[0] === 'City not found'}
-<div class="card-footer d-flex justify-content-center weather-app-card__footer">
+<div class="card-footer d-flex justify-content-center weather-app-card__footer" transition:fade>
   <div class="col-6 text-center">
     <h1>{forecast[0]}</h1>
   </div>
@@ -22,10 +23,11 @@
     color: #888;
     background: white;
     padding: 1rem 0;
+    border-radius: 0 0 4px 4px;
   }
 </style>
 {:else}
-<div class="card-footer w-100 d-flex weather-app-card__footer">
+<div class="card-footer w-100 d-flex weather-app-card__footer" transition:fade>
   {#each forecast as forecasts}
   <div class="d-flex flex-column text-center card-footer__forecast-item">
     <span class="forecast-item__date">{forecasts.date}</span>
@@ -45,6 +47,7 @@
   .weather-app-card__footer {
     background: white;
     padding: 1rem 0;
+    border-radius: 0 0 4px 4px;
   }
 
   .card-footer__forecast-item {
@@ -78,3 +81,23 @@
   }
 </style>
 {/if}
+
+<script>
+  import { fade } from 'svelte-transitions';
+  import { cubicInOut } from 'eases-jsnext';
+
+  export default {
+    transitions: {
+      fade(node, { delay = 0, duration = 400 }) {
+        const o = +getComputedStyle(node).opacity;
+
+        return {
+          delay,
+          duration,
+          easing: cubicInOut,
+          css: t => `opacity: ${t * o}`
+        };
+      }
+    }
+  };
+</script>

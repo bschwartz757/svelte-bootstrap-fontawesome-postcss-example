@@ -15,7 +15,6 @@ body {
   padding: 8px;
   line-height: 0.75;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
 }
 
 input {
@@ -27,9 +26,4 @@ input {
 
 .form-group {
   margin-bottom: 0;
-}
-
-i.fas.fa-search,
-i.fas.fa-times {
-  color: rgba(0, 0, 0, 0.4);
 }

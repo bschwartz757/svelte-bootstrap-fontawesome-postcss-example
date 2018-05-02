@@ -1,16 +1,15 @@
+// Un-comment if you want to use Bootstrap js
+// import "./utils/bootstrap-libs";
+
+// Fetch api key for openweathermap.com at app start time - only use this if running Express app with a valid api key in `key.txt`
+// import fetchKey from './utils/fetchKey';
+
+import "./app.scss";
+
 import App from "./App.html";
 
-// const apiKey = fetch("/get-key")
-//   .then(res => res.json())
-//   .then(result => {
-//     window.apiKey = result.key;
-//   })
-//   .catch(err => {
-//     console.error(`Error fetching key: ${err}`);
-//   });
-
 const app = new App({
-  target: document.querySelector(".weather-app")
+  target: document.querySelector("#weather-app")
 });
 
 export default app;

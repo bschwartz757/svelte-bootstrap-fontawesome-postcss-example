@@ -1,14 +1,14 @@
 <div class="card-body d-flex justify-content-center weather-app-card__body">
   {#if !current.length}
-  <div class="card-body__temp">
+  <div class="card-body__temp" transition:fade>
     <h1>No Data</h1>
   </div>
   {:elseif current[0] === 'City not found'}
-  <div class="card-body__temp">
+  <div class="card-body__temp" transition:fade>
     <h1>{current[0]}</h1>
   </div>
   {:else}
-  <div class="card-body__temp">
+  <div class="card-body__temp" transition:fade>
     <span>{current[0].temp.f}</span>
   </div>
   <sup class="weather-card__degree-symbol">&deg;</sup>
@@ -19,6 +19,26 @@
   </div>
   {/if}
 </div>
+
+<script>
+  import { fade } from 'svelte-transitions';
+  import { cubicInOut } from 'eases-jsnext';
+
+  export default {
+    transitions: {
+      fade(node, { delay = 0, duration = 400 }) {
+        const o = +getComputedStyle(node).opacity;
+
+        return {
+          delay,
+          duration,
+          easing: cubicInOut,
+          css: t => `opacity: ${t * o}`
+        };
+      }
+    }
+  };
+</script>
 
 <style>
   .card-body__temp {
@@ -34,9 +54,13 @@
     vertical-align: top;
   }
 
+  .card-body__status {
+    margin-top: 1rem;
+  }
+
   .card-body__status span:first-of-type {
     font-size: 3em;
-    margin: .5rem 0 1rem 0;
+    margin: .5rem 0;
   }
 
   .card-body__status span:nth-child(2) {
