@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": ["last 1 version", "> 1% in US"]
+        }
+      }
+    ]
+  ],
+  "plugins": ["external-helpers"]
+}
