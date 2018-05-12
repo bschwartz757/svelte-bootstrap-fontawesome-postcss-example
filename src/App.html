@@ -34,7 +34,7 @@
       CardFooter: './components/views/CardFooter.html'
     },
     methods: {
-      getWeather: async function (value) {
+      async getWeather(value) {
         const initialState = this.get();
         if (!value.current.city) {
           // this resets the cardBody and cardFooter components

@@ -14,8 +14,7 @@ const production = !process.env.ROLLUP_WATCH;
 
 export default {
   input: "src/main.js",
-  output: [
-    {
+  output: [{
       sourcemap: true,
       format: "iife",
       name: "app",
@@ -34,8 +33,7 @@ export default {
     }),
     // enable tree shaking - per https://fontawesome.com/how-to-use/use-with-node-js#ConfiguringRollupfortreeshaking
     alias({
-      "@fortawesome/fontawesome-free-solid":
-        "node_modules/@fortawesome/fontawesome-free-solid/shakable.es.js"
+      "@fortawesome/fontawesome-free-solid": "node_modules/@fortawesome/fontawesome-free-solid/shakable.es.js"
     }),
     svelte({
       // enable run-time checks when not in production
@@ -45,7 +43,6 @@ export default {
       extensions: [".css", ".scss"],
       // `extract: false` will automatically inject all styles into <head> tag
       extract: "./public/css/bundle.css"
-      // modules: true
     }),
     babel({
       exclude: "node_modules/**",
@@ -55,7 +52,9 @@ export default {
     commonjs({
       include: "node_modules/**"
     }),
-    production && buble({ exclude: "node_modules/**" }),
+    production && buble({
+      exclude: "node_modules/**"
+    }),
     production && uglify()
   ]
 };
