@@ -3,8 +3,9 @@
 
 // Fetch api key for openweathermap.com at app start time - only
 // use this if running Express app with a valid api key in `key.txt`
-// import fetchKey from './utils/fetchKey';
-import "babel-polyfill";
+import fetchKey from "./utils/fetchKey";
+fetchKey();
+// import "babel-polyfill";
 
 import "./app.scss";
 

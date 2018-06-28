@@ -1,17 +1,17 @@
 import alias from "rollup-plugin-alias";
-import babel from "rollup-plugin-babel";
+// import babel from "rollup-plugin-babel";
 import buble from "rollup-plugin-buble";
 import commonjs from "rollup-plugin-commonjs";
 import eslint from "rollup-plugin-eslint";
 import resolve from "rollup-plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
 import svelte from "rollup-plugin-svelte";
-import uglify from "rollup-plugin-uglify";
+// import uglify from "rollup-plugin-uglify";
 import sass from "node-sass";
 
 import pkg from "./package.json";
 const production = !process.env.ROLLUP_WATCH;
-
+console.log("rollup watch: ", production);
 export default {
   input: "src/main.js",
   output: [
@@ -47,15 +47,15 @@ export default {
       extract: "./public/css/bundle.css"
       // modules: true
     }),
-    babel({
-      exclude: "node_modules/**",
-      runtimeHelpers: true
-    }),
+    // babel({
+    //   exclude: "node_modules/**",
+    //   runtimeHelpers: true
+    // }),
     resolve(),
     commonjs({
       include: "node_modules/**"
     }),
-    production && buble({ exclude: "node_modules/**" }),
-    production && uglify()
+    production && buble({ exclude: "node_modules/**" })
+    // production && uglify.uglify()
   ]
 };
